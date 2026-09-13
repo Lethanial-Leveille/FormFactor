@@ -15,4 +15,12 @@ Size (arm-none-eabi-size):
 
 Method: build console output, Debug configuration, -O0.
 
+## 2026-09-13 — Phase 0 complete
 
+LD2 (PA5) blinks at 1 Hz via HAL_GPIO_TogglePin + HAL_Delay(500).
+Breakpoint set on the toggle line, hit under the debugger, single stepped
+through several toggles and confirmed LD2 changes state on each resume.
+Program persists in flash: reset restarts it with no debugger attached.
+
+Size after adding the blink: 7.68 KB flash (was 7.54 KB generated only).
+Delta ~140 B for the two lines plus the HAL functions they pull in.
